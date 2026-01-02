@@ -19,27 +19,30 @@ export const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: ${theme.spacing.sm} 0;
+  padding: 0;
   position: relative;
 `;
 
 export const Logo = styled.div`
   cursor: pointer;
+  margin: 0;
+  padding: 0;
   
-  span {
-    font-family: ${theme.fonts.heading};
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: ${theme.colors.cream};
+  img {
+    height: 88px;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    display: block;
+    filter: brightness(0) saturate(100%) invert(94%) sepia(7%) saturate(269%) hue-rotate(314deg) brightness(101%) contrast(96%);
     transition: all 0.3s ease;
-    letter-spacing: 0.5px;
     
     @media (max-width: ${theme.breakpoints.mobile}) {
-      font-size: 1.25rem;
+      height: 68px;
     }
     
     &:hover {
-      color: ${theme.colors.white};
+      filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
       transform: scale(1.05);
     }
   }

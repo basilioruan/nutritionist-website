@@ -45,7 +45,7 @@ const Header: React.FC = () => {
       <div className="container">
         <Nav>
           <Logo onClick={() => scrollToSection('inicio')}>
-            <span>Natália Cruz</span>
+            <img src="/src/assets/nc_logo.svg" alt="Natália Cruz" />
           </Logo>
 
           <NavMenu>

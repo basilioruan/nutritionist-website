@@ -22,8 +22,7 @@ const Services: React.FC = () => {
       features: [
         'Anamnese detalhada',
         'Avaliação antropométrica',
-        'Plano alimentar personalizado',
-        'Acompanhamento mensal'
+        'Plano alimentar personalizado'
       ]
     },
     {
@@ -33,8 +32,7 @@ const Services: React.FC = () => {
       features: [
         'Periodização nutricional',
         'Suplementação específica',
-        'Estratégias de hidratação',
-        'Otimização da performance'
+        'Estratégias de hidratação'
       ]
     },
     {
@@ -44,30 +42,7 @@ const Services: React.FC = () => {
       features: [
         'Mudança de hábitos',
         'Educação nutricional',
-        'Receitas saudáveis',
-        'Suporte psicológico'
-      ]
-    },
-    {
-      icon: '🩺',
-      title: 'Nutrição Clínica',
-      description: 'Tratamento nutricional para condições específicas de saúde.',
-      features: [
-        'Diabetes e resistência insulínica',
-        'Hipertensão arterial',
-        'Dislipidemias',
-        'Distúrbios gastrointestinais'
-      ]
-    },
-    {
-      icon: '👥',
-      title: 'Consulta Familiar',
-      description: 'Orientação nutricional para toda a família, incluindo crianças e adolescentes.',
-      features: [
-        'Nutrição infantil',
-        'Planejamento familiar',
-        'Cardápios práticos',
-        'Educação alimentar'
+        'Receitas saudáveis'
       ]
     },
     {
@@ -77,8 +52,7 @@ const Services: React.FC = () => {
       features: [
         'Flexibilidade de horários',
         'Material digital',
-        'Acompanhamento via WhatsApp',
-        'Videoconferência segura'
+        'Acompanhamento via WhatsApp'
       ]
     }
   ];
@@ -102,7 +76,7 @@ const Services: React.FC = () => {
               <ServiceFeatures>
                 {service.features.map((feature, featureIndex) => (
                   <ServiceFeature key={featureIndex}>
-                    ✓ {feature}
+                    {feature}
                   </ServiceFeature>
                 ))}
               </ServiceFeatures>

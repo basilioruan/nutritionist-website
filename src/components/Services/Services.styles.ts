@@ -46,20 +46,25 @@ export const ServicesTitle = styled.h2`
 
 export const ServicesGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: ${theme.spacing.xl};
   width: 100%;
   
   @media (min-width: ${theme.breakpoints.xlDesktop}) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 3rem;
   }
   
   @media (max-width: ${theme.breakpoints.desktop}) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
   
   @media (max-width: ${theme.breakpoints.tablet}) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: ${theme.spacing.lg};
+  }
+  
+  @media (max-width: ${theme.breakpoints.mobile}) {
     grid-template-columns: 1fr;
     gap: ${theme.spacing.lg};
   }

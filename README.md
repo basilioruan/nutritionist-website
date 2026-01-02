@@ -1,4 +1,4 @@
-# 🥗 Site da Nutricionista - Dra. Maria
+# 🥗 Site da Nutricionista - Dra. Natália Cruz
 
 Um site profissional e responsivo para nutricionistas, desenvolvido com React, TypeScript, Vite e Styled Components.
 
@@ -32,17 +32,20 @@ Um site profissional e responsivo para nutricionistas, desenvolvido com React, T
 ## 📦 Instalação e Execução
 
 ### Pré-requisitos
+
 - Node.js (versão 16 ou superior)
 - npm ou yarn
 
 ### Passos para execução
 
 1. **Instale as dependências**
+
    ```bash
    npm install
    ```
 
 2. **Execute o projeto em desenvolvimento**
+
    ```bash
    npm run dev
    ```

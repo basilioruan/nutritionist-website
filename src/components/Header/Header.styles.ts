@@ -7,8 +7,7 @@ export const HeaderContainer = styled.header<{ isScrolled: boolean }>`
   left: 0;
   right: 0;
   z-index: 1000;
-  background-color: ${({ isScrolled }) => 
-    isScrolled ? 'rgba(139, 149, 86, 0.95)' : 'rgba(139, 149, 86, 0.9)'}; //rgb(139 149 86)
+  background-color: rgba(139, 149, 86, 0.9);
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
   box-shadow: ${({ isScrolled }) => 

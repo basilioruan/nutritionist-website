@@ -41,13 +41,14 @@ export const ContactInfo = styled.div`
 
 export const ContactTitle = styled.h2`
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 300;
   color: ${theme.colors.text.primary};
   margin-bottom: ${theme.spacing.md};
   line-height: 1.3;
   
   span {
     color: ${theme.colors.primary};
+    font-weight: 400;
   }
   
   @media (max-width: ${theme.breakpoints.tablet}) {

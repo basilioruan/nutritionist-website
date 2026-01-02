@@ -70,13 +70,14 @@ export const HeroSubtitle = styled.p`
 
 export const HeroTitle = styled.h1`
   font-size: 3.5rem;
-  font-weight: 700;
+  font-weight: 300;
   line-height: 1.2;
   margin-bottom: ${theme.spacing.md};
   color: ${theme.colors.text.primary};
   
   span {
     color: ${theme.colors.primary};
+    font-weight: 400;
     position: relative;
     
     &::after {

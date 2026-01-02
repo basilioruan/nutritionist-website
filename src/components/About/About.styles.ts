@@ -74,12 +74,14 @@ export const AboutText = styled.div`
 
 export const AboutTitle = styled.h2`
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 300;
   margin-bottom: ${theme.spacing.md};
   color: ${theme.colors.text.primary};
+  line-height: 1.3;
   
   span {
     color: ${theme.colors.primary};
+    font-weight: 400;
   }
   
   @media (max-width: ${theme.breakpoints.tablet}) {

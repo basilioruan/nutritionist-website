@@ -25,7 +25,7 @@ export const ServicesSubtitle = styled.p`
 
 export const ServicesTitle = styled.h2`
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 300;
   color: ${theme.colors.text.primary};
   max-width: 600px;
   margin: 0 auto;
@@ -33,6 +33,7 @@ export const ServicesTitle = styled.h2`
   
   span {
     color: ${theme.colors.primary};
+    font-weight: 400;
   }
   
   @media (max-width: ${theme.breakpoints.tablet}) {

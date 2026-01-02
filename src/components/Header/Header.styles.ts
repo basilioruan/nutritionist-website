@@ -29,9 +29,10 @@ export const Logo = styled.div`
   span {
     font-family: ${theme.fonts.heading};
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 300;
     color: ${theme.colors.cream};
     transition: all 0.3s ease;
+    letter-spacing: 0.5px;
     
     @media (max-width: ${theme.breakpoints.mobile}) {
       font-size: 1.25rem;

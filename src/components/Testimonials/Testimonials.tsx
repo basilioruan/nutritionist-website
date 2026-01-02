@@ -1,129 +1,62 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
   TestimonialsContainer,
   TestimonialsHeader,
   TestimonialsTitle,
-  TestimonialsSubtitle,
-  TestimonialCarousel,
-  TestimonialCard,
-  TestimonialContent,
-  TestimonialText,
+  TestimonialsGrid,
+  TestimonialItem,
+  TestimonialQuote,
   TestimonialAuthor,
   TestimonialName,
   TestimonialRole,
-  TestimonialRating,
-  CarouselControls,
-  CarouselButton,
-  CarouselDots,
-  CarouselDot,
 } from './Testimonials.styles';
 
 const Testimonials: React.FC = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
   const testimonials = [
     {
-      text: "A Dra. Maria transformou completamente minha relação com a comida. Perdi 15kg de forma saudável e aprendi a comer com prazer e consciência. Seu acompanhamento é excepcional!",
+      text: "Profissionalismo excepcional. Resultados visíveis em poucas semanas.",
       author: "Ana Silva",
-      role: "Executiva",
-      rating: 5
+      role: "Executiva"
     },
     {
-      text: "Procurei a Dra. Maria para melhorar minha performance nos treinos. O plano nutricional foi perfeito, consegui ganhar massa muscular e melhorar meu rendimento significativamente.",
-      author: "Carlos Santos",
-      role: "Personal Trainer",
-      rating: 5
+      text: "Transformou minha performance nos treinos de forma surpreendente.",
+      author: "Carlos Santos", 
+      role: "Atleta"
     },
     {
-      text: "Estava com diabetes tipo 2 e não sabia como controlar através da alimentação. Com a orientação da Dra. Maria, consegui estabilizar minha glicemia e melhorar muito minha qualidade de vida.",
+      text: "Abordagem única e personalizada. Mudou minha relação com a comida.",
       author: "Maria Oliveira",
-      role: "Aposentada",
-      rating: 5
+      role: "Empresária"
     },
     {
-      text: "O atendimento online da Dra. Maria é incrível! Mesmo à distância, senti todo o cuidado e atenção. Consegui reeducar minha alimentação e criar hábitos saudáveis para toda família.",
+      text: "Método inovador. Consegui meus objetivos sem sacrifícios extremos.",
       author: "João Pereira",
-      role: "Empresário",
-      rating: 5
-    },
-    {
-      text: "Após anos tentando emagrecer sem sucesso, a Dra. Maria me ajudou a entender que não se tratava apenas de uma dieta, mas de uma mudança de estilo de vida. Resultado: -20kg e muito mais disposição!",
-      author: "Fernanda Costa",
-      role: "Professora",
-      rating: 5
+      role: "Designer"
     }
   ];
-
-  const nextTestimonial = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prevTestimonial = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
-
-  const goToTestimonial = (index: number) => {
-    setCurrentIndex(index);
-  };
-
-  useEffect(() => {
-    const interval = setInterval(nextTestimonial, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const renderStars = (rating: number) => {
-    return Array.from({ length: 5 }, (_, index) => (
-      <span key={index} style={{ color: index < rating ? '#FFD700' : '#E0E0E0' }}>
-        ★
-      </span>
-    ));
-  };
 
   return (
     <TestimonialsContainer id="depoimentos">
       <div className="container">
         <TestimonialsHeader>
-          <TestimonialsSubtitle>Depoimentos</TestimonialsSubtitle>
           <TestimonialsTitle>
-            O que meus <span>pacientes</span> dizem
+            Experiências que <span>transformam</span>
           </TestimonialsTitle>
         </TestimonialsHeader>
 
-        <TestimonialCarousel>
-          <TestimonialCard>
-            <TestimonialContent>
-              <TestimonialText>
-                "{testimonials[currentIndex].text}"
-              </TestimonialText>
-              <TestimonialRating>
-                {renderStars(testimonials[currentIndex].rating)}
-              </TestimonialRating>
+        <TestimonialsGrid>
+          {testimonials.map((testimonial, index) => (
+            <TestimonialItem key={index}>
+              <TestimonialQuote>
+                <span className="quote-mark">"</span>{testimonial.text}<span className="quote-mark">"</span>
+              </TestimonialQuote>
               <TestimonialAuthor>
-                <TestimonialName>{testimonials[currentIndex].author}</TestimonialName>
-                <TestimonialRole>{testimonials[currentIndex].role}</TestimonialRole>
+                <TestimonialName>{testimonial.author}</TestimonialName>
+                <TestimonialRole>{testimonial.role}</TestimonialRole>
               </TestimonialAuthor>
-            </TestimonialContent>
-          </TestimonialCard>
-
-          <CarouselControls>
-            <CarouselButton onClick={prevTestimonial}>
-              ←
-            </CarouselButton>
-            <CarouselButton onClick={nextTestimonial}>
-              →
-            </CarouselButton>
-          </CarouselControls>
-
-          <CarouselDots>
-            {testimonials.map((_, index) => (
-              <CarouselDot
-                key={index}
-                active={index === currentIndex}
-                onClick={() => goToTestimonial(index)}
-              />
-            ))}
-          </CarouselDots>
-        </TestimonialCarousel>
+            </TestimonialItem>
+          ))}
+        </TestimonialsGrid>
       </div>
     </TestimonialsContainer>
   );

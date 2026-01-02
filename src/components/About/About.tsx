@@ -5,14 +5,8 @@ import {
   AboutText,
   AboutTitle,
   AboutDescription,
-  AboutStats,
-  StatItem,
-  StatNumber,
-  StatLabel,
   AboutImage,
   AboutImageContainer,
-  QualificationsList,
-  QualificationItem,
 } from './About.styles';
 
 const About: React.FC = () => {
@@ -34,52 +28,14 @@ const About: React.FC = () => {
               Sobre <span>Natália Cruz</span>
             </AboutTitle>
             <AboutDescription>
-              Sou nutricionista formada pela Universidade Federal com especialização em Nutrição Clínica 
-              e Esportiva. Durante meus 8 anos de carreira, ajudei mais de 500 pessoas a transformarem 
-              seus hábitos alimentares e alcançarem uma vida mais saudável e equilibrada.
+              Sou nutricionista formada pela Universidade Federal de Lavras (UFLA), dedicada a ajudar pessoas a 
+              transformarem seus hábitos alimentares e alcançarem uma vida mais saudável e equilibrada. 
             </AboutDescription>
             <AboutDescription>
               Minha abordagem é personalizada e humanizada, considerando não apenas os aspectos nutricionais, 
               mas também o estilo de vida, preferências e objetivos únicos de cada paciente. Acredito que 
               uma alimentação saudável deve ser prazerosa e sustentável.
             </AboutDescription>
-            
-            <QualificationsList>
-              <QualificationItem>
-                ✓ Graduação em Nutrição - Universidade Federal
-              </QualificationItem>
-              <QualificationItem>
-                ✓ Especialização em Nutrição Clínica
-              </QualificationItem>
-              <QualificationItem>
-                ✓ Pós-graduação em Nutrição Esportiva
-              </QualificationItem>
-              <QualificationItem>
-                ✓ Certificação em Comportamento Alimentar
-              </QualificationItem>
-              <QualificationItem>
-                ✓ Membro do Conselho Regional de Nutricionistas
-              </QualificationItem>
-            </QualificationsList>
-            
-            <AboutStats>
-              <StatItem>
-                <StatNumber>8+</StatNumber>
-                <StatLabel>Anos de Experiência</StatLabel>
-              </StatItem>
-              <StatItem>
-                <StatNumber>500+</StatNumber>
-                <StatLabel>Pacientes Atendidos</StatLabel>
-              </StatItem>
-              <StatItem>
-                <StatNumber>95%</StatNumber>
-                <StatLabel>Taxa de Sucesso</StatLabel>
-              </StatItem>
-              <StatItem>
-                <StatNumber>1000+</StatNumber>
-                <StatLabel>Planos Personalizados</StatLabel>
-              </StatItem>
-            </AboutStats>
           </AboutText>
         </AboutContent>
       </div>

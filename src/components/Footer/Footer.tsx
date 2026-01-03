@@ -76,8 +76,7 @@ const Footer: React.FC = () => {
               <FooterItem>Consulta Nutricional</FooterItem>
               <FooterItem>Nutrição Esportiva</FooterItem>
               <FooterItem>Reeducação Alimentar</FooterItem>
-              <FooterItem>Nutrição Clínica</FooterItem>
-              <FooterItem>Consulta Online</FooterItem>
+              <FooterItem>Consulta Presencial ou Online</FooterItem>
             </FooterList>
           </FooterSection>
 

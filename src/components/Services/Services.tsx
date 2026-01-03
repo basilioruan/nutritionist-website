@@ -47,8 +47,8 @@ const Services: React.FC = () => {
     },
     {
       icon: '💻',
-      title: 'Consulta Online',
-      description: 'Atendimento nutricional à distância com toda comodidade e segurança.',
+      title: 'Consulta Presencial ou Online',
+      description: 'Atendimento nutricional presencial ou à distância com toda comodidade e segurança.',
       features: [
         'Flexibilidade de horários',
         'Material digital',

@@ -59,6 +59,33 @@ export const FooterList = styled.ul`
 export const FooterItem = styled.li`
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.6;
+  
+  a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-weight: 400;
+    position: relative;
+    transition: all 0.3s ease;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: ${theme.colors.cream};
+      transition: width 0.3s ease;
+    }
+    
+    &:hover {
+      color: ${theme.colors.cream};
+      
+      &::after {
+        width: 100%;
+      }
+    }
+  }
 `;
 
 export const FooterLink = styled.a`
@@ -73,9 +100,7 @@ export const FooterLink = styled.a`
 `;
 
 export const FooterBottom = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  text-align: center;
   padding-top: ${theme.spacing.lg};
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   

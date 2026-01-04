@@ -1,4 +1,11 @@
 import React from 'react';
+import { 
+  FaWhatsapp, 
+  FaInstagram, 
+  FaEnvelope, 
+  FaMapMarkerAlt, 
+  FaClock 
+} from 'react-icons/fa';
 import {
   FooterContainer,
   FooterContent,
@@ -9,9 +16,7 @@ import {
   FooterList,
   FooterItem,
   FooterBottom,
-  FooterCopyright,
-  FooterSocial,
-  SocialLink,
+  FooterCopyright
 } from './Footer.styles';
 
 const Footer: React.FC = () => {
@@ -31,11 +36,10 @@ const Footer: React.FC = () => {
           <FooterSection>
             <FooterTitle>Natália Cruz - Nutricionista</FooterTitle>
             <FooterText>
-              Transformando vidas através de uma alimentação saudável e equilibrada. 
-              Mais de 8 anos de experiência em nutrição clínica e esportiva.
+              Transformando vidas através de uma alimentação saudável e equilibrada.
             </FooterText>
             <FooterText>
-              <strong>CRN-3: 12345</strong>
+              <strong>CRN-9: 34281</strong>
             </FooterText>
           </FooterSection>
 
@@ -84,17 +88,28 @@ const Footer: React.FC = () => {
             <FooterTitle>Contato</FooterTitle>
             <FooterList>
               <FooterItem>
-                📱 (11) 99999-9999
+                <FaWhatsapp style={{ marginRight: '8px', verticalAlign: 'middle' }} />
+                (35) 99155-6025
               </FooterItem>
               <FooterItem>
-                📧 contato@nataliacruznutricionista.com.br
+                <FaInstagram style={{ marginRight: '8px', verticalAlign: 'middle' }} />
+                <a href="https://instagram.com/nataliacruz.nutri" target="_blank" rel="noopener noreferrer">
+                  @nataliacruz.nutri
+                </a>
               </FooterItem>
               <FooterItem>
-                📍 Rua das Flores, 123<br />
-                Centro - São Paulo, SP
+                <FaEnvelope style={{ marginRight: '8px', verticalAlign: 'middle' }} />
+                contato@nataliacruznutricionista.com.br
               </FooterItem>
               <FooterItem>
-                🕒 Seg-Sex: 08h às 18h<br />
+                <FaMapMarkerAlt style={{ marginRight: '8px', verticalAlign: 'middle' }} />
+                Rua Costa Pereira, 82<br />
+                Vila Brasilia - Lavras, MG<br />
+                <small>(Em frente ao hospital Vaz Monteiro)</small>
+              </FooterItem>
+              <FooterItem>
+                <FaClock style={{ marginRight: '8px', verticalAlign: 'middle' }} />
+                Seg-Sex: 08h às 18h<br />
                 Sáb: 08h às 12h
               </FooterItem>
             </FooterList>
@@ -105,24 +120,6 @@ const Footer: React.FC = () => {
           <FooterCopyright>
             © {currentYear} Natália Cruz - Nutricionista. Todos os direitos reservados.
           </FooterCopyright>
-          
-          <FooterSocial>
-            <SocialLink href="#" aria-label="Instagram">
-              📷
-            </SocialLink>
-            <SocialLink href="#" aria-label="Facebook">
-              📘
-            </SocialLink>
-            <SocialLink href="#" aria-label="LinkedIn">
-              💼
-            </SocialLink>
-            <SocialLink href="#" aria-label="YouTube">
-              📺
-            </SocialLink>
-            <SocialLink href="#" aria-label="WhatsApp">
-              📱
-            </SocialLink>
-          </FooterSocial>
         </FooterBottom>
       </div>
     </FooterContainer>

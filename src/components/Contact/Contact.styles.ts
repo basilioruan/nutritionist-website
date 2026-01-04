@@ -97,6 +97,11 @@ export const ContactIcon = styled.div`
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  color: ${theme.colors.white};
+  
+  svg {
+    fill: ${theme.colors.white};
+  }
 `;
 
 export const ContactText = styled.div`
@@ -107,6 +112,33 @@ export const ContactText = styled.div`
     color: ${theme.colors.text.primary};
     display: block;
     margin-bottom: ${theme.spacing.xs};
+  }
+  
+  a {
+    color: ${theme.colors.text.secondary};
+    text-decoration: none;
+    font-weight: 400;
+    position: relative;
+    transition: all 0.3s ease;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: ${theme.colors.primary};
+      transition: width 0.3s ease;
+    }
+    
+    &:hover {
+      color: ${theme.colors.primary};
+      
+      &::after {
+        width: 100%;
+      }
+    }
   }
 `;
 
@@ -211,16 +243,32 @@ export const FormTextarea = styled.textarea`
   }
 `;
 
-export const FormButton = styled.div`
-  text-align: center;
+export const FormButton = styled.button`
+  width: 100%;
+  padding: ${theme.spacing.md} ${theme.spacing.xl};
+  background: linear-gradient(135deg, ${theme.colors.primary}, ${theme.colors.secondary});
+  color: ${theme.colors.white};
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
   margin-top: ${theme.spacing.xl};
   
-  button {
-    width: 100%;
-    
-    @media (min-width: ${theme.breakpoints.tablet}) {
-      width: auto;
-      min-width: 200px;
-    }
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: ${theme.shadows.medium};
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+  
+  @media (min-width: ${theme.breakpoints.tablet}) {
+    width: auto;
+    min-width: 200px;
+    margin: ${theme.spacing.xl} auto 0;
+    display: block;
   }
 `;

@@ -1,4 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react';  
+import { 
+  FaWhatsapp, 
+  FaInstagram, 
+  FaEnvelope, 
+  FaMapMarkerAlt, 
+  FaClock 
+} from 'react-icons/fa';
 import {
   ContactContainer,
   ContactContent,
@@ -15,10 +22,7 @@ import {
   FormInput,
   FormTextarea,
   FormButton,
-  SocialLinks,
-  SocialLink,
 } from './Contact.styles';
-import { Button } from '../../styles/GlobalStyle';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -38,10 +42,28 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Aqui você pode implementar o envio do formulário
-    console.log('Form data:', formData);
-    // Por enquanto, vamos simular o envio
-    alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
+    
+    // Usar mensagem padrão se estiver vazia
+    const userMessage = formData.message.trim() || 'Gostaria de saber mais sobre a consulta nutricional.';
+    
+    // Formatar mensagem para WhatsApp
+    const message = `Olá!.
+    
+    *Nome:* ${formData.name}
+    *E-mail:* ${formData.email}
+    *Telefone:* ${formData.phone}
+
+    *Mensagem:*
+    ${userMessage}`;
+
+    // Codificar mensagem para URL
+    const encodedMessage = encodeURIComponent(message);
+    
+    // Abrir WhatsApp com mensagem pré-formatada
+    const whatsappURL = `https://wa.me/5535991556025?text=${encodedMessage}`;
+    window.open(whatsappURL, '_blank');
+    
+    // Limpar formulário após envio
     setFormData({
       name: '',
       email: '',
@@ -53,64 +75,72 @@ const Contact: React.FC = () => {
   return (
     <ContactContainer id="contato">
       <div className="container">
+        <ContactTitle>
+          Entre em <span>contato</span>
+        </ContactTitle>
+        
         <ContactContent>
           <ContactInfo>
-            <ContactTitle>
-              Vamos conversar sobre seus <span>objetivos</span>?
-            </ContactTitle>
             <ContactDescription>
-              Estou aqui para ajudar você a transformar sua relação com a alimentação. 
-              Entre em contato e vamos juntos construir um plano personalizado para suas necessidades.
+              Estou aqui para ajudar você a alcançar seus objetivos de saúde e bem-estar. 
+              Entre em contato para agendar uma consulta ou tirar suas dúvidas.
             </ContactDescription>
 
             <ContactItem>
-              <ContactIcon>📱</ContactIcon>
+              <ContactIcon>
+                <FaWhatsapp />
+              </ContactIcon>
               <ContactText>
                 <strong>WhatsApp</strong><br />
-                (11) 99999-9999
+                (35) 99155-6025
               </ContactText>
             </ContactItem>
 
             <ContactItem>
-              <ContactIcon>📧</ContactIcon>
+              <ContactIcon>
+                <FaInstagram />
+              </ContactIcon>
+              <ContactText>
+                <strong>Instagram</strong><br />
+                <a href="https://instagram.com/nataliacruz.nutri" target="_blank" rel="noopener noreferrer">
+                  @nataliacruz.nutri
+                </a>
+              </ContactText>
+            </ContactItem>
+
+            <ContactItem>
+              <ContactIcon>
+                <FaEnvelope />
+              </ContactIcon>
               <ContactText>
                 <strong>E-mail</strong><br />
-                contato@dramarianutrição.com.br
+                contato@nataliacruznutricionista.com.br
               </ContactText>
             </ContactItem>
 
             <ContactItem>
-              <ContactIcon>📍</ContactIcon>
+              <ContactIcon>
+                <FaMapMarkerAlt />
+              </ContactIcon>
               <ContactText>
                 <strong>Endereço</strong><br />
-                Rua das Flores, 123 - Centro<br />
-                São Paulo, SP - CEP 01234-567
+                Rua Costa Pereira, 82<br />
+                Vila Brasilia - Lavras, MG<br />
+                CEP 37200-160<br />
+                <small>(Em frente ao hospital Vaz Monteiro)</small>
               </ContactText>
             </ContactItem>
 
             <ContactItem>
-              <ContactIcon>🕒</ContactIcon>
+              <ContactIcon>
+                <FaClock />
+              </ContactIcon>
               <ContactText>
                 <strong>Horário de Atendimento</strong><br />
                 Segunda à Sexta: 08h às 18h<br />
                 Sábado: 08h às 12h
               </ContactText>
             </ContactItem>
-
-            <SocialLinks>
-              <SocialLink href="#" aria-label="Instagram">
-                📷
-              </SocialLink>
-              <SocialLink href="#" aria-label="Facebook">
-                📘
-              </SocialLink>
-              <SocialLink href="#" aria-label="LinkedIn">
-                💼
-              </SocialLink>
-              <SocialLink href="#" aria-label="YouTube">
-                📺
-              </SocialLink>
-            </SocialLinks>
           </ContactInfo>
 
           <ContactForm onSubmit={handleSubmit}>
@@ -125,7 +155,6 @@ const Contact: React.FC = () => {
                 value={formData.name}
                 onChange={handleInputChange}
                 required
-                placeholder="Seu nome completo"
               />
             </FormGroup>
 
@@ -138,12 +167,11 @@ const Contact: React.FC = () => {
                 value={formData.email}
                 onChange={handleInputChange}
                 required
-                placeholder="seu@email.com"
               />
             </FormGroup>
 
             <FormGroup>
-              <FormLabel htmlFor="phone">Telefone/WhatsApp *</FormLabel>
+              <FormLabel htmlFor="phone">Telefone *</FormLabel>
               <FormInput
                 type="tel"
                 id="phone"
@@ -151,27 +179,24 @@ const Contact: React.FC = () => {
                 value={formData.phone}
                 onChange={handleInputChange}
                 required
-                placeholder="(11) 99999-9999"
               />
             </FormGroup>
 
             <FormGroup>
-              <FormLabel htmlFor="message">Mensagem *</FormLabel>
+              <FormLabel htmlFor="message">Mensagem</FormLabel>
               <FormTextarea
                 id="message"
                 name="message"
                 value={formData.message}
                 onChange={handleInputChange}
-                required
-                placeholder="Conte-me sobre seus objetivos e como posso te ajudar..."
-                rows={5}
+                rows={4}
+                placeholder="Gostaria de saber mais sobre a consulta nutricional."
               />
             </FormGroup>
 
-            <FormButton>
-              <Button type="submit" size="large">
-                Enviar Mensagem
-              </Button>
+            <FormButton type="submit">
+              <FaWhatsapp style={{ marginRight: '8px', verticalAlign: 'middle' }} />
+              Enviar Mensagem
             </FormButton>
           </ContactForm>
         </ContactContent>
